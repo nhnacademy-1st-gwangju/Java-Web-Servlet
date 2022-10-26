@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
         @WebInitParam(name = "exclude-urls", value = "/\n" +
                                             "/index.jsp\n" +
                                             "/login.do\n" +
+                                            "/change-lang\n" +
                                             "/loginForm.jsp\n" +
                                             "/init\n" +
                                             "/foods.do")

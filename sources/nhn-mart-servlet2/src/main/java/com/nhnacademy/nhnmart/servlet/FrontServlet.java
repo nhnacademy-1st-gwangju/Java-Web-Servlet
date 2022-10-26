@@ -47,8 +47,6 @@ public class FrontServlet extends HttpServlet {
             command = new LoginResultController();
         } else if ("/logout.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new LogoutProcessingController();
-        } else if ("/change-lang.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
-//            command = "/change-lang";
         } else if ("/pay.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new PayProcessingController();
         }

@@ -45,6 +45,8 @@ public class InitServlet extends HttpServlet {
 
         servletContext.setAttribute("money", 20000);
 
+        servletContext.setAttribute("lang", "ko");
+
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,11 +10,14 @@
     String id = httpSession.getAttribute("id").toString();
     String money = config.getServletContext().getAttribute("money").toString();
 %>
-<p>로그인 성공</p><br />
-<p><%= id %> 님 환영합니다.</p><br />
-<p>잔고: <%= money %></p><br />
-<a href="/logout.do">로그아웃</a><br />
-<a href="/init">초기화</a><br />
-<a href="/foods.do">상품 목록</a><br />
+<fmt:setLocale value="${applicationScope.lang}"/>
+<fmt:bundle basename="locale">
+    <p><fmt:message key="loginSuccess" /></p><br/>
+    <p><%= id %> <fmt:message key="welcome" /></p><br/>
+    <p><fmt:message key="account" />: <%= money %></p><br/>
+    <a href="/logout.do"><fmt:message key="logout" /></a><br/>
+    <a href="/init"><fmt:message key="init" /></a><br/>
+    <a href="/foods.do"><fmt:message key="foodList" /></a><br/>
+</fmt:bundle>
 </body>
 </html>
